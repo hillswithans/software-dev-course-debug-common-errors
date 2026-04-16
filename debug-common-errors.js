@@ -24,30 +24,38 @@ Think about which debugging methods you found most useful and how you might appl
 // Description:
 // This program is intended to display a simple prompt in the console but fails to run.
 
-console.log("Welcome to the bootcamp
+//console.log("Welcome to the bootcamp // I kept the code but kept it as a comment so it could run. 
 
 // What’s Wrong?
+//there is no ending quotes, parenthese or semi colon. It would cause a syntax error.
+console.log("Welcome to bootcamp") //is how it should read.
 
 
 // Program B
 // Description:
 // This code attempts to multiply each number in an array by 2 and display the results. However, it crashes at runtime.
 
-let numbers = [2, 4, "eight"];
+/*let numbers = [2, 4, "eight"];
+for (let i = 0; i < numbers.length; i++) {
+  let doubled = numbers[i] * 2;
+  console.log(doubled);
+}*/
+
+// What’s Wrong?  
+//It would cause a runtime error because the array has a mix of numbers and strings. 
+
+let numbers = [2, 4, 8];
 for (let i = 0; i < numbers.length; i++) {
   let doubled = numbers[i] * 2;
   console.log(doubled);
 }
-
-// What’s Wrong?
-
 
 
 // Program C (Logic Error)
 // Description:
 // This snippet of code is supposed to check if a given number is prime (i.e., divisible only by 1 and itself). However, it incorrectly marks some numbers as prime or not prime.
 
-function isPrime(num) {
+/*function isPrime(num) {
   if (num < 2) return false;
   for (let i = 2; i < num; i++) {
     if (num % i === 0) {
@@ -57,6 +65,19 @@ function isPrime(num) {
   return false; // Supposed to indicate num IS prime
 }
 
-console.log(isPrime(7)); // Expected true but gets false
+console.log(isPrime(7)); // Expected true but gets false */
 
 // What’s Wrong?
+//It is a logic error.
+
+function isPrime(num) {
+  if (num < 2) return false;
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false; // Corrected: This indicates num is NOT prime
+    }
+  }
+  return true; // Corrected: This indicates num IS prime
+}
+
+console.log(isPrime(7)); // This will now correctly return true
